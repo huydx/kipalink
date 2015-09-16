@@ -1,0 +1,307 @@
+/* Google fonts OpenSans */
+/* Apache License, version 2.0 */
+/* http://www.google.com/fonts / Choose Vietnamese */
+@font-face {
+  font-family: 'OpenSans';
+  src: url('fonts/OpenSans.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('fonts/OpenSansBold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+.opensans {
+  font-family: "OpenSans", sans-serif;
+}
+/* ClearSans */
+/* Apache License, 2.0 */
+/* http://www.google.com/fonts/specimen/Merienda */
+@font-face {
+  font-family: 'ClearSans';
+  src: url('fonts/ClearSans-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+@font-face {
+  font-family: 'ClearSans';
+  src: url('fonts/ClearSans-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+/* Use ClearSans font */
+.clearsans {
+  font-family: "ClearSans";
+}
+body {
+  font-family: "ClearSans";
+}
+/* Master Header */
+.master-header {
+  z-index: 999;
+  /* Menu */
+}
+.master-header .ui.page.grid {
+  background-color: #21ba45;
+  border-radius: 0;
+  /* Container */
+}
+.master-header .ui.page.grid .column.header-container {
+  margin: 0;
+  padding: 0;
+  /* Logo */
+  /* Right menu */
+}
+.master-header .ui.page.grid .column.header-container.logo {
+  margin: 0;
+  padding: 0.85em 0.3em;
+  display: inline-block;
+}
+.master-header .ui.page.grid .column.header-container.logo:before {
+  display: none;
+}
+.master-header .ui.page.grid .column.header-container.logo a {
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.master-header .ui.page.grid .column.header-container.logo a.name {
+  margin: 0 0 0 .5em;
+}
+.master-header .ui.page.grid .column.header-container.logo a img {
+  height: 1.4em;
+  width: auto;
+}
+.master-header .ui.page.grid .column.header-container.right.menu {
+  margin: 0 !important;
+}
+.master-header .ui.page.grid .column.header-container.right.menu a.item {
+  padding: 0 .7em;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1em;
+}
+.master-header .ui.page.grid .column.header-container.right.menu a.item.right {
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.master-header .ui.page.grid .column.header-container.right.menu a.item:before {
+  display: none;
+}
+.master-header .ui.page.grid .column.header-container.right.menu a.item:hover {
+  background-color: inherit;
+  color: #ffffff;
+}
+/* Master Body */
+/* Front */
+.master-body {
+  padding: 2em 0 3em 0;
+}
+.master-body a {
+  color: rgba(0, 0, 0, 0.8);
+}
+.master-body .ui.page.grid .column.feed-col {
+  padding: 0;
+}
+.master-body .ui.page.grid .column.feed-col ol {
+  padding: 0 0 0 1.8em;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .main i {
+  float: left;
+  display: block;
+  margin: .2em 0 0 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .main i:hover {
+  cursor: pointer;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .main a.title {
+  display: block;
+  margin: 0 0 0 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .main a.title .source {
+  font-size: .8em;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .meta {
+  margin: .3em 0 0 2.9em;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: .8em;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .meta a {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .meta a:hover {
+  border-bottom: 0.1em solid rgba(0, 0, 0, 0.4);
+}
+.master-body .ui.page.grid .column.feed-col ol li.item.voted .main i {
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+.master-body .ui.page.grid .column.feed-col .next {
+  margin: 2em 4.2em;
+}
+.master-body .ui.page.grid .column.feed-col .next .more {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #21ba45;
+}
+/* Item */
+.master-body .ui.page.grid .column.feed-col {
+  /* My comments */
+  /* Comments */
+}
+.master-body .ui.page.grid .column.feed-col ol.single {
+  list-style-type: none;
+}
+.master-body .ui.page.grid .column.feed-col textarea.cmts-area {
+  display: block;
+  width: 50%;
+  min-height: 7em;
+  max-height: 10000em;
+  padding: .65em 1em;
+  margin: 0 0 .3em 4em;
+  font-size: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  outline: 0;
+  resize: none;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-border-radius: 0.3125em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.3125em;
+  -moz-background-clip: padding;
+  border-radius: 0.3125em;
+  background-clip: padding-box;
+  -webkit-transition: height 0.1s;
+  -moz-transition: height 0.1s;
+  -o-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.master-body .ui.page.grid .column.feed-col .ui.reply.button {
+  margin: 1em 0 2em 4em;
+}
+.master-body .ui.page.grid .column.feed-col ol.comments {
+  margin: 1em 0 2em 0;
+  list-style-type: none;
+}
+.master-body .ui.page.grid .column.feed-col ol.comments.master {
+  margin: 1em 0 4em 0;
+}
+.master-body .ui.page.grid .column.feed-col ol.comments li.item .main a {
+  color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-weight: normal;
+}
+.master-body .ui.page.grid .column.feed-col ol.comments li.item .main a.title {
+  font-size: .8em;
+  margin: 0 0 0 2.5em;
+  color: rgba(0, 0, 0, 0.9);
+}
+.master-body .ui.page.grid .column.feed-col ol.comments li.item .main a.source {
+  font-size: .8em;
+  margin: 0 0 0 .5em;
+}
+.master-body .ui.page.grid .column.feed-col ol.comments li.item .main a.reply {
+  font-size: .8em;
+  margin: 0 0 0 2.5em;
+  color: rgba(0, 0, 0, 0.6);
+  border-bottom: 0.1em solid rgba(0, 0, 0, 0.3);
+}
+.master-body .ui.page.grid .column.feed-col ol.comments li.item .main p.content {
+  color: #000000;
+  font-size: 1em;
+  margin: .5em 2em .2em 2em;
+}
+/* For narrower desktop */
+@media only screen and (max-width: 1250px) {
+  .master-header .ui.page.grid .column.header-container.logo {
+    width: 15%!important;
+  }
+  .master-header .ui.page.grid .column.header-container.right.menu {
+    width: 85%!important;
+  }
+}
+/* For tablet */
+@media only screen and (max-width: 992px) {
+  .master-header .ui.page.grid .column.header-container.logo {
+    width: 16%!important;
+  }
+  .master-header .ui.page.grid .column.header-container.right.menu {
+    width: 84%!important;
+  }
+}
+/* For smartphone */
+@media only screen and (max-width: 768px) {
+  .master-header .ui.page.grid {
+    padding: 0 1em;
+  }
+  .master-header .ui.page.grid .column.header-container.logo {
+    width: 20%!important;
+  }
+  .master-header .ui.page.grid .column.header-container.right.menu {
+    width: 80%!important;
+  }
+  .master-header .ui.page.grid .column.header-container.right.menu a.item:not(.right) {
+    display: none;
+  }
+  .master-body .ui.page.grid {
+    padding: 0 1em;
+  }
+}
+/* For narrower smartphone */
+@media only screen and (max-width: 568px) {
+  .master-header .ui.page.grid .column.header-container.logo {
+    width: 50%!important;
+  }
+  .master-header .ui.page.grid .column.header-container.right.menu {
+    width: 50%!important;
+  }
+  /* Front */
+  .master-body .ui.page.grid .column.feed-col ol {
+    padding: 0;
+  }
+  .master-body .ui.page.grid .column.feed-col .next {
+    margin: 2em 2.4em;
+  }
+  /* Item */
+  .master-body .ui.page.grid .column.feed-col textarea.cmts-area {
+    margin: .3em 2.4em;
+    width: 80%;
+  }
+  .master-body .ui.page.grid .column.feed-col .ui.reply.button {
+    margin: .3em 2.4em;
+  }
+}
