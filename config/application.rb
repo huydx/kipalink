@@ -17,10 +17,11 @@ module Kipalink
     # config.time_zone = 'Central Time (US & Canada)'
     config.exceptions_app = self.routes
     config.assets.paths << Rails.root.join("vendor","assets","bower_components",
-                                           "semantic-ui","build","packaged")
+                                           "semantic-ui","dist")
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    config.cache_store = :redis_store, 'redis://localhost:6379/1'    
     config.i18n.default_locale = :vi
   end
 end
