@@ -3,11 +3,11 @@ Rails.application.routes.draw do
     :registrations => "registrations",
     :sessions => "sessions"
   }
-  
+
   root 'links#index'
 
   get 'allcomments', to: 'comments#all_comments'
-  
+
   resources :links do
     resources :comments
     get 'vote', to: 'links#vote'

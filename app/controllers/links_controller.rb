@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :vote]
-  
+
   def index
     @links = Link.paginate(:page => params[:page]).order('created_at DESC')
   end
@@ -32,7 +32,7 @@ class LinksController < ApplicationController
     end
     redirect_to links_path
   end
-  
+
   private
   def link_params
     params.require(:link).permit(:id, :title, :url, :description)

@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
-  def allcomments
+  def all_comments
     @link_comment = LinkComment.all.order('created_at DESC')
   end
-  
+
   def create
     @link = Link.find(params[:link_id])
     if @link

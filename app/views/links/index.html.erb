@@ -6,7 +6,11 @@
         <!-- Item -->
         <li class="item">
           <div class="main">
+            <% if user_signed_in? %>
             <% if !link_voted(current_user, link) %>
+            <a href="<%=link_vote_path(link)%>"><i class="counterclockwise rotated play icon"></i></a>
+            <% end %>
+            <% else %>
             <a href="<%=link_vote_path(link)%>"><i class="counterclockwise rotated play icon"></i></a>
             <% end %>
             <a href="<%= link.url %>" class="title" target="_blank">
