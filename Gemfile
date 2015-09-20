@@ -12,7 +12,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
-
+gem 'will_paginate'
 
 gem 'bower-rails'
 gem 'jquery-rails'

@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
     :omniauthable, :omniauth_providers => [:facebook, :twitter, :github]
 
   has_many :comments
+  has_many :links
+  has_many :link_comments
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
@@ -51,40 +53,8 @@ class User < ActiveRecord::Base
     true
   end
 
-  def self.hot_by_score_periodic(num)
-    User.order("score_periodic DESC").limit(num)
-  end
-
   def avatar_url_path
     self.avatar_url.blank? ? ActionController::Base.helpers.asset_path('common/male_avatar.png') : self.avatar_url
-  end
-
-  def total_likes_from_post
-    self.posts.joins(:users).size
-  end
-
-  def comment_to_my_post_count
-    Post.joins(:comments).where(user_id: self.id).count
-  end
-
-  def like_to_my_post_count
-    Post.joins(:likes).where(user_id: self.id).count
-  end
-
-  #statistic of post tag to display in mypage
-  def post_tag_statistic
-    tags_stat =
-      published_post_tags_ids.group_by{|t| t}.map{|t,arr| [t, arr.count]}.to_h
-    tags = published_post_tags.map{|t| [t.id, t]}.to_h
-
-    #merging
-    tags.merge!(tags_stat) do |tag, tag_val, tag_stat_val|
-      {
-        title:  tag_val.name,
-        value:  tag_stat_val,
-        color:  tag_val.color
-      }
-    end.map{|k,v| v}
   end
 
   def last_access_time(pagekey)
@@ -113,23 +83,6 @@ class User < ActiveRecord::Base
     self.provider == 'twitter'
   end
 
-  def watching?(org)
-    Watching.exists?(organization_id: org.id, user_id: self.id)
-  end
-
-  def liked?(post)
-    Like.exists?(post_id: post.id, user_id: self.id)
-  end
-
-  def published_post_tags
-    @published_post_tags ||= Tag.where(id: published_post_tags_ids)
-  end
-
-  def published_post_tags_ids
-    published_ids     = self.posts.published.pluck(:id)
-    @published_tag_ids ||= ActsAsTaggableOn::Tagging.where(taggable_id: published_ids, taggable_type: :Post).pluck(:tag_id)
-  end
-
   def create_handle_name
     return unless self.handle_name.blank?
     self.handle_name =
@@ -138,7 +91,6 @@ class User < ActiveRecord::Base
       self.handle_name = "#{self.handle_name}1"
     end
   end
-
 
   def normalize(name)
     VietnameseService.normalize_strip_space(name)

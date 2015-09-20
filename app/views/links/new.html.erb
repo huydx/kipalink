@@ -1,0 +1,23 @@
+<div class="master-body">
+  <div class="ui page grid">
+    <div class="three column">
+      <div class="ui form">
+        <%= form_for @link, :html => {} do |f| %>
+        <div class="field">
+          <label>Title</label>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <label>url</label>
+          <%= f.text_field :url %>
+        </div>
+        <div class="field">
+          <label>description</label>
+          <%= f.text_area :description %>
+        </div>
+        <%= f.submit "Submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

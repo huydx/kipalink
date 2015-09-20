@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909141504) do
+ActiveRecord::Schema.define(version: 20150920103927) do
 
   create_table "comments", force: true do |t|
     t.string   "user_id",    null: false
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 20150909141504) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "link_comments", force: true do |t|
+    t.text     "content"
+    t.integer  "point",      default: 0
+    t.integer  "link_id"
+    t.string   "user_id",                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "link_comments", ["link_id"], name: "index_link_comments_on_link_id", using: :btree
 
   create_table "notifications", force: true do |t|
     t.string   "from_user"
@@ -187,7 +198,6 @@ ActiveRecord::Schema.define(version: 20150909141504) do
     t.string   "facebook_url"
     t.string   "handle_name",            limit: 50
     t.float    "score_periodic",         limit: 53, default: -1.0
-    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

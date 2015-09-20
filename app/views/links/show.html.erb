@@ -1,0 +1,44 @@
+<div class="master-body">
+  <div class="ui page grid">
+    <div class="column feed-col">
+      <ol class="single">
+        <!-- Item -->
+        <li class="item">
+          <div class="main">
+            <i class="counterclockwise rotated play icon"></i>
+            <a href="<%= @link.url %>" class="title" target="_blank">
+              <%= @link.title %>
+              <span class="source"><%= @link.url %></span>
+            </a>
+          </div>
+          <div class="meta">
+            <span class="point"><%= @link.point %> hay</span>
+            <span class="wrote">đăng bởi</span>
+            <a href="" class="author"><%= @link.user.name %></a>
+            <a href="" class="time"><%= time_ago_in_words(@link.created_at) %> ago</a>
+            <span class="divider">|</span>
+            <a href="" class="comments"><%= @comments.count %> bình luận</a>
+          </div>
+        </li>
+      </ol>
+
+      <%= form_for(@comment, :url => link_comments_path(@link)) do |f|%>
+      <%= f.text_area :content, :spellcheck=>"false", :id=>"my-cmts", :class=>"cmts-area", :placeholder=>"Bình luận" %>
+      <%= f.submit 'Bình luận', :class => "ui basic reply button" %>
+      <% end %>
+      
+      <ol class="master comments"> <!-- Only root layer should have master class -->
+        <!-- Item -->
+        <% @comments.each do |comment| %>
+        <li class="item">
+          <div class="main">
+            <a href="" class="title"><%= comment.user.name %></a>
+            <a href="" class="source"><%= time_ago_in_words(comment.created_at) %></a>
+            <p class="content"><%= comment.content %></p>
+            <a href="" class="reply">Trả lời</a>
+        </li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+</div>
