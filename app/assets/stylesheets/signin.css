@@ -1,0 +1,274 @@
+/* Import master */
+/* PC width and padding */
+/* Narrower PC width and padding */
+/* Tablet width and padding */
+/* Smartphone width and padding */
+/* Narrower smartphone width and padding */
+/* Background color */
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+/* Typekit web font loader */
+.wf-loading .capture,
+.wf-loading .welcome {
+  visibility: hidden;
+}
+html,
+body {
+  margin: 0;
+  font-family: "Helvetica", "Arial";
+  color: #4a4a4a;
+  font-family: 'Ubuntu', sans-serif;
+  height: 100%;
+  background-color: #f7f5f3;
+}
+a {
+  text-decoration: none;
+  color: #3fb1a3;
+  color: rgba(255, 255, 255, 0.7);
+}
+a:hover {
+  color: #36978b;
+}
+a:hover {
+  color: #ffffff;
+}
+/* Header */
+header.ui.page.grid {
+  background-color: #2c4762;
+}
+header.ui.page.grid .head.row {
+  margin: 0;
+  padding: 0;
+  /* Top */
+}
+header.ui.page.grid .head.row .top-info {
+  padding: .7em 0;
+}
+header.ui.page.grid .head.row .top-info .logo.item {
+  float: left;
+  margin: .5em 0;
+}
+header.ui.page.grid .head.row .top-info .logo.item a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+}
+header.ui.page.grid .head.row .top-info .ui.basic.button {
+  font-family: "OpenSans", sans-serif;
+  float: right;
+  font-size: .9em;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+}
+/* Login section */
+/*****************/
+#login .ui.page.grid {
+  height: 100%;
+}
+#login .ui.page.grid .row {
+  margin: 0;
+  padding: 0;
+  /* Mail and password */
+  /* Screen divider */
+  /* Social buttons */
+}
+#login .ui.page.grid .row .center-header {
+  padding: 10% 0 0 0;
+  /* Logo */
+  /* Info */
+}
+#login .ui.page.grid .row .center-header .logo {
+  font-family: 'Ubuntu', sans-serif;
+  color: #00b5ad;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+#login .ui.page.grid .row .center-header .detail {
+  font-family: "OpenSans", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 1em;
+}
+#login .ui.page.grid .row .input-field {
+  padding: 2em 0 .5em 0;
+  /* Password reset link */
+}
+#login .ui.page.grid .row .input-field .ui.form .field {
+  margin: 0;
+}
+#login .ui.page.grid .row .input-field .ui.form .field .input input {
+  margin: .5em 0;
+  width: 30%;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#login .ui.page.grid .row .input-field .ui.form .field .ui.button {
+  width: 30%;
+  margin: 1em 0;
+  font-size: .9em;
+}
+#login .ui.page.grid .row .input-field .password_reset {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  display: none;
+  width: 30%;
+}
+#login .ui.page.grid .row .input-field .password_reset a.smart-signup-link {
+  display: none;
+}
+#login .ui.page.grid .row .screen-divider {
+  padding: 0 0 .8em 0!important;
+  width: 30% !important;
+  padding: 0;
+}
+#login .ui.page.grid .row .screen-divider .ui.divider {
+  margin: 0rem 1.5rem .8rem 1.5rem;
+  font-weight: 100;
+}
+#login .ui.page.grid .row .screen-divider .ui.divider i {
+  color: rgba(0, 0, 0, 0.5);
+}
+#login .ui.page.grid .row .social-segment {
+  margin: 0 0 2em 0;
+  /* Facebook */
+  /* Twitter */
+  /* Github */
+}
+#login .ui.page.grid .row .social-segment .ui.button {
+  margin: .25em 0;
+  padding: 0.8em 1.4em 0.8em 1em ;
+}
+#login .ui.page.grid .row .social-segment .ui.button i {
+  margin-right: 0.3em;
+}
+#login .ui.page.grid .row .social-segment .ui.facebook.button:hover {
+  background-color: #314983;
+}
+#login .ui.page.grid .row .social-segment .ui.twitter.button:hover {
+  background-color: #3180b7;
+}
+#login .ui.page.grid .row .social-segment .ui.github.button {
+  background-color: #666666;
+}
+#login .ui.page.grid .row .social-segment .ui.github.button:hover {
+  background-color: #545454;
+}
+#login .ui.page.grid .row .blank-column {
+  margin: 1.5em 0;
+}
+/* For very large PC */
+/* For large PC */
+/* For narrower PC */
+@media only screen and (max-width: 1500px) {
+  #login .ui.page.grid .row .center-header {
+    padding: 8% 0 0 0;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .input input {
+    width: 33%;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .ui.button {
+    width: 33%;
+  }
+  #login .ui.page.grid .row .input-field .password_reset {
+    width: 33%;
+  }
+  #login .ui.page.grid .row .screen-divider {
+    width: 33% !important;
+  }
+}
+/* For landscape tablet */
+/* For tablet */
+@media only screen and (max-width: 992px) {
+  .ui.page.grid {
+    padding: 0 2%;
+  }
+  #login .ui.page.grid .row .center-header {
+    padding: 6% 0 0 0;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .input input {
+    width: 37%;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .ui.button {
+    width: 37%;
+  }
+  #login .ui.page.grid .row .input-field .password_reset {
+    width: 37%;
+  }
+  #login .ui.page.grid .row .screen-divider {
+    width: 37% !important;
+  }
+}
+/* For smartphone */
+@media only screen and (max-width: 768px) {
+  #login .ui.page.grid .row .center-header {
+    padding: 25% 0 0 0;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .input input {
+    width: 45%;
+  }
+  #login .ui.page.grid .row .input-field .ui.form .field .ui.button {
+    width: 45%;
+  }
+  #login .ui.page.grid .row .input-field .password_reset {
+    width: 45%;
+  }
+  #login .ui.page.grid .row .screen-divider {
+    width: 45% !important;
+  }
+}
+/* For narrower smartphone */
+@media only screen and (max-width: 568px) {
+  #login .ui.page.grid.login-appear {
+    opacity: 1;
+  }
+  #login .ui.page.grid.login-appear .row .top-info {
+    display: none;
+  }
+  #login .ui.page.grid.login-appear .row .center-header {
+    padding: 5% 0 0.5em 0;
+  }
+  #login .ui.page.grid.login-appear .row .center-header .logo {
+    font-size: 2.2em;
+    margin: 0;
+  }
+  #login .ui.page.grid.login-appear .row .center-header .detail {
+    display: none;
+  }
+  #login .ui.page.grid.login-appear .row .input-field {
+    padding: 1em 0 .5em 0;
+  }
+  #login .ui.page.grid.login-appear .row .input-field .ui.form .field .input input {
+    width: 100%;
+  }
+  #login .ui.page.grid.login-appear .row .input-field .ui.form .field .ui.button {
+    width: 100%;
+  }
+  #login .ui.page.grid.login-appear .row .input-field .password_reset {
+    width: 100%;
+  }
+  #login .ui.page.grid.login-appear .row .input-field .password_reset a.password-link {
+    position: absolute;
+    left: 4%;
+  }
+  #login .ui.page.grid.login-appear .row .input-field .password_reset a.smart-signup-link {
+    display: inline-block;
+    position: absolute;
+    right: 4%;
+  }
+  #login .ui.page.grid.login-appear .row .screen-divider {
+    display: none;
+  }
+  #login .ui.page.grid.login-appear .row .social-segment {
+    margin: 2em 0 0 0;
+  }
+  #login .ui.page.grid.login-appear .row .social-segment .ui.button {
+    width: 100%;
+  }
+  #login .ui.page.grid.login-appear .row .blank-column {
+    display: none;
+  }
+}

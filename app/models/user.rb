@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 
   before_validation :create_handle_name
 
-  include UserFollowable
-  include TagFollowable
   include UuidPrimary
 
   validates :handle_name, :uniqueness => true
@@ -19,18 +17,7 @@ class User < ActiveRecord::Base
     :validatable,
     :omniauthable, :omniauth_providers => [:facebook, :twitter, :github]
 
-  has_many :posts
   has_many :comments
-  has_many :like_comment
-
-  # For user-involve-organization association
-  has_many :involvements
-  has_many :organizations, through: :involvements
-
-  # For user-watch-organization association
-  has_many :watchings
-
-  has_many :notifications, class_name: 'Notification', foreign_key: 'to_user'
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
@@ -162,22 +149,5 @@ class User < ActiveRecord::Base
     ret.blank? ? nil : ret
   rescue
     nil
-  end
-
-  def mentionable_range(post_id)
-    post = Post.find_by_id(post_id)
-    author = post.user
-    commentted_users_id = post.comments.pluck(:user_id)
-    (self.following + [author] + User.where('id' => commentted_users_id )).uniq
-  rescue
-    []
-  end
-
-  def build_mentionable_response
-    {
-      "name" => self.name,
-      "handle_name" => self.handle_name,
-      "avatar_url" => self.avatar_url_path
-    }
   end
 end

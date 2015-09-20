@@ -21,7 +21,7 @@ module Kipalink
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
-    config.cache_store = :redis_store, 'redis://localhost:6379/1'    
-    config.i18n.default_locale = :vi
+    config.cache_store = :redis_store, 'redis://localhost:6379/1'
+    config.i18n.default_locale = :en
   end
 end

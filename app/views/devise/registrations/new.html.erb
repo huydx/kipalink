@@ -1,0 +1,88 @@
+<% content_for :sub_styles do %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "signup" %>
+<% end %>
+
+<div class="ui page grid headline">
+  <div class="center aligned column">
+    <div class="ui small steps">
+      <div class="ui disabled step">
+        Đăng ký
+      </div>
+      <div class="ui active step">
+        Xác nhận
+      </div>
+      <div class="ui disabled step">
+        Chủ đề hot
+      </div>
+      <div class="ui disabled step">
+        Người nổi tiếng
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui page grid content">
+  <div class="four wide column left-side"></div>
+  <div class="eight wide column center-frame">
+    <br>
+    <h1 class="ui center aligned teal header logo">
+      Kipalog
+    </h1>
+    <div class="ui center aligned small basic segment">
+      Chia sẻ và học hỏi kiến thức một cách dễ dàng hơn.
+    </div>
+    <!-- Main form -->
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "ui error form basic segment need-signup-validate", id: "confirm-form"}) do |f| %>
+      <!-- Name get default = email's text before @ -->
+      <%= render partial: '/layouts/error', locals: {errors: @user.errors} %>
+      <div class="field">
+        <div class="ui left labeled icon input">
+          <%= f.text_field :name, id: "username", placeholder: "Username" %>
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="field">
+        <div class="ui left labeled icon input">
+          <%= f.email_field :email, id: "email", placeholder: "Email" %>
+          <i class="mail icon"></i>
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="field">
+        <div class="ui left labeled icon input">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Password", id: "password", value: resource.password %>
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <!-- Confirm Password -->
+      <div class="field">
+        <div class="ui left labeled icon input">
+          <%= f.password_field :password_confirmation, autocomplete: "off", id: "password-confirm", placeholder: "Xác nhận password" %>
+          <i class="repeat icon"></i>
+          <div class="ui corner label">
+            <i class="icon asterisk"></i>
+          </div>
+        </div>
+      </div>
+      <!-- TOS -->
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input id="tos" type="checkbox">
+          <label for="tos">
+            Đồng ý với
+            <%= link_to tos_path, :target => "_blank" do%>
+              điều khoản sử dụng
+            <% end %>
+          </label>
+        </div>
+      </div>
+      <!-- Submit -->
+      <div class="ui fluid teal submit button">
+        <i class="sign in icon"></i>
+        Tham gia
+      </div>
+    <% end %>
+  </div>
+</div>
