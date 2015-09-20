@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   }
   
   root 'links#index'
+
   get 'allcomments', to: 'comments#all_comments'
   
   resources :links do
     resources :comments
+    get 'vote', to: 'links#vote'
   end
   resources :tos, only: [:index]
 end

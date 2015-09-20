@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920103927) do
+ActiveRecord::Schema.define(version: 20150920155959) do
 
   create_table "comments", force: true do |t|
     t.string   "user_id",    null: false
@@ -63,6 +63,23 @@ ActiveRecord::Schema.define(version: 20150920103927) do
   end
 
   add_index "link_comments", ["link_id"], name: "index_link_comments_on_link_id", using: :btree
+
+  create_table "link_stats", force: true do |t|
+    t.string   "url"
+    t.integer  "clicked_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "point",       default: 0
+    t.string   "user_id",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notifications", force: true do |t|
     t.string   "from_user"
@@ -203,6 +220,15 @@ ActiveRecord::Schema.define(version: 20150920103927) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["handle_name"], name: "index_users_on_handle_name", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "link_id"
+    t.string   "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["link_id"], name: "index_votes_on_link_id", using: :btree
 
   create_table "watchings", force: true do |t|
     t.string "user_id"

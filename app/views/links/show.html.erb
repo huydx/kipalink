@@ -5,14 +5,16 @@
         <!-- Item -->
         <li class="item">
           <div class="main">
-            <i class="counterclockwise rotated play icon"></i>
+            <% if !link_voted(current_user, @link) %>
+            <a href="<%=link_vote_path(@link)%>"><i class="counterclockwise rotated play icon"></i></a>
+            <% end %>
             <a href="<%= @link.url %>" class="title" target="_blank">
               <%= @link.title %>
               <span class="source"><%= @link.url %></span>
             </a>
           </div>
           <div class="meta">
-            <span class="point"><%= @link.point %> hay</span>
+            <span class="point"><%= @link.vote.count %> hay</span>
             <span class="wrote">đăng bởi</span>
             <a href="" class="author"><%= @link.user.name %></a>
             <a href="" class="time"><%= time_ago_in_words(@link.created_at) %> ago</a>
@@ -21,12 +23,13 @@
           </div>
         </li>
       </ol>
-
-      <%= form_for(@comment, :url => link_comments_path(@link)) do |f|%>
-      <%= f.text_area :content, :spellcheck=>"false", :id=>"my-cmts", :class=>"cmts-area", :placeholder=>"Bình luận" %>
-      <%= f.submit 'Bình luận', :class => "ui basic reply button" %>
+      <% if user_signed_in? %>
+        <%= form_for(@comment, :url => link_comments_path(@link)) do |f|%>
+          <%= f.text_area :content, :spellcheck=>"false", :id=>"my-cmts", :class=>"cmts-area", :placeholder=>"Bình luận" %>
+          <%= f.submit 'Bình luận', :class => "ui basic reply button" %>
+        <% end %>
       <% end %>
-      
+
       <ol class="master comments"> <!-- Only root layer should have master class -->
         <!-- Item -->
         <% @comments.each do |comment| %>
