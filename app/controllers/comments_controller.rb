@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @link
       @link_comment = LinkComment.new(post_params)
       @link_comment.link = @link
-        @link_comment.user = current_user
+      @link_comment.user = current_user
       if @link_comment.save
         redirect_to link_path(@link)
       end

@@ -1,0 +1,21 @@
+<main class="master-body">
+  <div class="ui page grid">
+    <div class="column feed-col">
+
+        <ol class="comments">
+          <!-- Item -->
+          <li class="item">
+            <div class="main">
+              <a href="" class="title"><%= @comment.user.name %></a>
+              <a href="" class="source"><%= time_ago_in_words(@comment.created_at) %></a>
+              <p class="content"><%= @comment.content %></p>
+            </div>
+          </li>
+        </ol>
+        <%= form_for(@reply, :url => comment_reply_index_path(@comment)) do |f|%>
+        <%= f.text_area :content, :spellcheck=>"false", :id=>"my-cmts", :class=>"cmts-area" %>
+        <%= f.submit 'Trả lời', :class => "ui basic reply button" %>
+        <% end %>
+    </div>
+  </div>
+</main>
