@@ -13,6 +13,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'will_paginate'
+gem 'closure_tree'
 
 gem 'bower-rails'
 gem 'jquery-rails'

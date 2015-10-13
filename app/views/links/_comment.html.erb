@@ -1,0 +1,4 @@
+<a href="" class="title"><%= comment.user.name %></a>
+<a href="" class="source"><%= time_ago_in_words(comment.created_at) %></a>
+<p class="content"><%= comment.content %></p>
+<a href="<%= new_comment_reply_path(comment) %>" class="reply">Trả lời</a>

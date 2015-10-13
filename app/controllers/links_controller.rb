@@ -20,7 +20,7 @@ class LinksController < ApplicationController
   def show
     @comment = LinkComment.new
     @link = Link.find(params[:id])
-    @comments = @link.link_comment
+    @comments = @link.link_comment.hash_tree
   end
 
   def vote

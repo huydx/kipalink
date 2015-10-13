@@ -36,15 +36,7 @@
 
       <ol class="master comments"> <!-- Only root layer should have master class -->
         <!-- Item -->
-        <% @comments.each do |comment| %>
-        <li class="item">
-          <div class="main">
-            <a href="" class="title"><%= comment.user.name %></a>
-            <a href="" class="source"><%= time_ago_in_words(comment.created_at) %></a>
-            <p class="content"><%= comment.content %></p>
-            <a href="" class="reply">Trả lời</a>
-        </li>
-        <% end %>
+        <%= comments_tree_for @comments %>
       </ol>
     </div>
   </div>
