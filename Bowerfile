@@ -1,1 +1,2 @@
 asset 'semantic-ui'
+asset 'jquery-autosize', '1.18.18'
