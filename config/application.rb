@@ -23,5 +23,10 @@ module Kipalink
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.cache_store = :redis_store, 'redis://localhost:6379/1'
     config.i18n.default_locale = :en
+
+    config.kipalink = ActiveSupport::OrderedOptions.new
+    config.kipalink.domain = "http://kipalink.com"
+    config.kipalink.authurl = "http://kipalog.com/users/sign_in"
+    config.kipalink.signup = "http://kipalog.com"
   end
 end

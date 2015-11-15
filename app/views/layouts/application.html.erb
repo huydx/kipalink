@@ -33,7 +33,7 @@
             <%= current_user.name %>
           </a>
           <% else %>
-          <a class="right item" href="<%= new_user_session_path %>">đăng nhập</a>
+          <a class="right item" href="<%= Rails.configuration.kipalink.authurl + '?next_url=' + Rails.configuration.kipalink.domain %>">đăng nhập</a>
           <% end %>
         </div>
       </div>

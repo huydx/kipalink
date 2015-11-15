@@ -3,15 +3,7 @@ class SessionsController < Devise::SessionsController
   before_action :no_header
 
   def new
-    @resource ||= User.new
-    render :layout => false
-  end
-
-  def create
-    super
-  end
-
-  def update
-    super
+    redirect_to Rails.configuration.kipalink.authurl +
+      '?next_url=' + Rails.configuration.kipalink.domain
   end
 end
