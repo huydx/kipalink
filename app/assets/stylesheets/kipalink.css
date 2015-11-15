@@ -22,33 +22,38 @@
 .opensans {
   font-family: "OpenSans", sans-serif;
 }
-/* ClearSans */
-/* Apache License, 2.0 */
-/* http://www.google.com/fonts/specimen/Merienda */
-@font-face {
-  font-family: 'ClearSans';
-  src: url('fonts/ClearSans-Light.woff') format('woff');
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-decoration: inherit;
-  text-transform: none;
-}
-@font-face {
-  font-family: 'ClearSans';
-  src: url('fonts/ClearSans-Bold.woff') format('woff');
-  font-style: normal;
-  font-weight: bold;
-  font-variant: normal;
-  text-decoration: inherit;
-  text-transform: none;
-}
-/* Use ClearSans font */
-.clearsans {
-  font-family: "ClearSans";
-}
 body {
-  font-family: "ClearSans";
+  font-family: "OpenSans", sans-serif;
+}
+.textarea {
+  display: block;
+  width: 50%;
+  min-height: 7em;
+  max-height: 1000em;
+  padding: .65em 1em;
+  margin: 0 0 .3em 4em;
+  font-size: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  outline: 0;
+  resize: none;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-border-radius: 0.3125em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.3125em;
+  -moz-background-clip: padding;
+  border-radius: 0.3125em;
+  background-clip: padding-box;
+  -webkit-transition: height 0.1s;
+  -moz-transition: height 0.1s;
+  -o-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.textarea.smartphone {
+  margin: .3em 2.4em;
+  width: 80%;
 }
 /* Master Header */
 .master-header {
@@ -83,7 +88,7 @@ body {
   vertical-align: middle;
 }
 .master-header .ui.page.grid .column.header-container.logo a.name {
-  margin: 0 0 0 .5em;
+  margin: 0 1em 0 .5em;
 }
 .master-header .ui.page.grid .column.header-container.logo a img {
   height: 1.4em;
@@ -99,6 +104,8 @@ body {
   font-size: 1.1em;
 }
 .master-header .ui.page.grid .column.header-container.right.menu a.item.right {
+  line-height: 1.5em;
+  float: right;
   text-align: right;
   white-space: nowrap;
   overflow: hidden;
@@ -139,14 +146,16 @@ body {
 .master-body .ui.page.grid .column.feed-col ol li.item .main i:hover {
   cursor: pointer;
 }
-.master-body .ui.page.grid .column.feed-col ol li.item .main a.title {
+.master-body .ui.page.grid .column.feed-col ol li.item .main .title {
   display: block;
   margin: 0 0 0 2em;
+}
+.master-body .ui.page.grid .column.feed-col ol li.item .main .title a {
   font-size: 1.2em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.8);
 }
-.master-body .ui.page.grid .column.feed-col ol li.item .main a.title .source {
+.master-body .ui.page.grid .column.feed-col ol li.item .main .title a .source {
   font-size: .8em;
   color: rgba(0, 0, 0, 0.4);
   font-weight: bold;
@@ -188,7 +197,7 @@ body {
   display: block;
   width: 50%;
   min-height: 7em;
-  max-height: 10000em;
+  max-height: 1000em;
   padding: .65em 1em;
   margin: 0 0 .3em 4em;
   font-size: 1em;
@@ -245,34 +254,54 @@ body {
   font-size: 1em;
   margin: .5em 2em .2em 2em;
 }
+/* New */
+.master-body .ui.page.grid .column .ui.form.basic.segment .divider {
+  margin: 1.5em 0;
+}
+.master-body .ui.page.grid .column .ui.form.basic.segment textarea.idea-area {
+  display: block;
+  height: 6em;
+  min-height: 6em;
+  max-height: 100em;
+  font-size: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  outline: 0;
+  resize: none;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-border-radius: 0.3125em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.3125em;
+  -moz-background-clip: padding;
+  border-radius: 0.3125em;
+  background-clip: padding-box;
+  -webkit-transition: height 0.1s;
+  -moz-transition: height 0.1s;
+  -o-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Login */
+.master-body .ui.page.grid .column .cap {
+  font-weight: bold;
+}
+.master-body .ui.page.grid .column .ui.form.basic.segment .hint {
+  font-size: .9em;
+  margin: 0 0 .5em 0;
+}
+.master-body .ui.page.grid .column .ui.message {
+  margin: 2em 0;
+}
+.master-body .ui.page.grid .column .ui.message a {
+  color: #21ba45;
+}
 /* For narrower desktop */
-@media only screen and (max-width: 1250px) {
-  .master-header .ui.page.grid .column.header-container.logo {
-    width: 15%!important;
-  }
-  .master-header .ui.page.grid .column.header-container.right.menu {
-    width: 85%!important;
-  }
-}
 /* For tablet */
-@media only screen and (max-width: 992px) {
-  .master-header .ui.page.grid .column.header-container.logo {
-    width: 16%!important;
-  }
-  .master-header .ui.page.grid .column.header-container.right.menu {
-    width: 84%!important;
-  }
-}
 /* For smartphone */
 @media only screen and (max-width: 768px) {
   .master-header .ui.page.grid {
     padding: 0 1em;
-  }
-  .master-header .ui.page.grid .column.header-container.logo {
-    width: 20%!important;
-  }
-  .master-header .ui.page.grid .column.header-container.right.menu {
-    width: 80%!important;
   }
   .master-header .ui.page.grid .column.header-container.right.menu a.item:not(.right) {
     display: none;
@@ -280,15 +309,15 @@ body {
   .master-body .ui.page.grid {
     padding: 0 1em;
   }
+  .master-body .ui.page.grid .main-col {
+    width: 100%!important;
+  }
+  .master-body .ui.page.grid .side-col {
+    width: 0%!important;
+  }
 }
 /* For narrower smartphone */
 @media only screen and (max-width: 568px) {
-  .master-header .ui.page.grid .column.header-container.logo {
-    width: 50%!important;
-  }
-  .master-header .ui.page.grid .column.header-container.right.menu {
-    width: 50%!important;
-  }
   /* Front */
   .master-body .ui.page.grid .column.feed-col ol {
     padding: 0;
@@ -304,4 +333,5 @@ body {
   .master-body .ui.page.grid .column.feed-col .ui.reply.button {
     margin: .3em 2.4em;
   }
+  /* New */
 }

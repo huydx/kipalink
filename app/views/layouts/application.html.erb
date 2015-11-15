@@ -7,21 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Kipalink</title>
     <!-- CSS -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'jquery-autosize/jquery.autosize.min' %>
+    <%= favicon_link_tag 'common/icon/favicon.ico' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="master-header">
+
+    <header class="master-header">
       <div class="ui transparent inverted main menu page grid">
-        <div class="two wide logo column header-container">
+        <div class="sixteen wide right menu logo column header-container">
           <a class="pic" href="">
             <img class="ui image" src="<%= image_path('common/square_icon_transparent.png') %>">
           </a>
           <a class="name" href="/">Kipalink</a>
-        </div>
-        <div class="fourteen wide right menu column header-container">
           <!-- Right -->
+          <a class="item" href="<%= root_path %>">
+            tin hay
+          </a>
           <a class="item" href="<%= root_path %>">
             tin mới
           </a>
@@ -35,9 +39,12 @@
           <% else %>
           <a class="right item" href="<%= new_user_session_path %>">đăng nhập</a>
           <% end %>
+
         </div>
       </div>
-    </div>
+    </header>
+
     <%= yield %>
+
   </body>
 </html>

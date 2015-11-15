@@ -1,4 +1,4 @@
-<div class="master-body">
+<main class="master-body">
   <div class="ui page grid">
     <div class="column feed-col">
       <ol start="1"> <!-- Set this value to 31,61... due to paging -->
@@ -13,10 +13,12 @@
             <% else %>
             <a href="<%=link_vote_path(link)%>"><i class="counterclockwise rotated play icon"></i></a>
             <% end %>
-            <a href="<%= link.url %>" class="title" target="_blank">
-              <%= link.title %>
-              <span class="source"><%= link.url %></span>
-            </a>
+            <div class="title">
+              <a href="<%= link.url %>" target="_blank">
+                <%= link.title %>
+                <span class="source">(<%= URI.parse(link.url).host %>)</span>
+              </a>
+            </div>
           </div>
           <div class="meta">
             <span class="point"><%= link.vote.count %> hay</span>
@@ -29,11 +31,11 @@
           </div>
         </li>
         <% end %>
-        <!-- Next page -->
-        <div class="next">
-          <a href="" class="more">Xem tiếp</a>
-        </div>
       </ol>
+      <!-- Next page -->
+      <div class="next">
+        <a href="" class="more">Xem tiếp</a>
+      </div>
     </div>
   </div>
-</div>
+</main>
