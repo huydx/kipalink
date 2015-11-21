@@ -25,8 +25,5 @@ module Kipalink
     config.i18n.default_locale = :en
 
     config.kipalink = ActiveSupport::OrderedOptions.new
-    config.kipalink.domain = "http://kipalink.com"
-    config.kipalink.authurl = "http://kipalog.com/users/sign_in"
-    config.kipalink.signup = "http://kipalog.com"
   end
 end

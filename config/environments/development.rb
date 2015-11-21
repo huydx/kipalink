@@ -34,4 +34,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.kipalink.domain = "http://localhost:5000"
+  config.kipalink.authurl = "http://localhost:3000/users/sign_in"
+  config.kipalink.signup = "http://localhost:3000"
 end
