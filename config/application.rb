@@ -24,6 +24,5 @@ module Kipalink
     config.cache_store = :redis_store, 'redis://localhost:6379/1'
     config.i18n.default_locale = :en
 
-    config.kipalink = ActiveSupport::OrderedOptions.new
   end
 end

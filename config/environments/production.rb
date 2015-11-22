@@ -76,6 +76,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.kipalink = ActiveSupport::OrderedOptions.new
   config.kipalink.domain = "http://kipalink.com"
   config.kipalink.authurl = "http://kipalog.com/users/sign_in"
   config.kipalink.signup = "http://kipalog.com"
