@@ -2,7 +2,8 @@ class LinksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :vote]
 
   def index
-    @links = Link.paginate(:page => params[:page]).order('created_at DESC')
+    @nextPageNo = params[:page].to_i + 1
+    @links = Link.fetch_links(params[:page])
   end
 
   def new

@@ -24,7 +24,7 @@
             <span class="point"><%= link.vote.count %> hay</span>
             <span class="divider">|</span>
             <span class="wrote">đăng bởi</span>
-            <a href="" class="author"><%= link.user.name %></a>
+            <a href="<%= Rails.configuration.kipalink.kipalog %>/users/<%= link.user.name %>/mypage" class="author"><%= link.user.name %></a>
             <a href="" class="time"><%= time_ago_in_words(link.created_at) %> ago</a>
             <span class="divider">|</span>
             <a href="<%= link_path(link) %>" class="comments"><%= link.link_comment.count %> bình luận</a>
@@ -34,7 +34,7 @@
       </ol>
       <!-- Next page -->
       <div class="next">
-        <a href="" class="more">Xem tiếp</a>
+        <a href="/?page=<%= @nextPageNo %>" class="more">Xem tiếp</a>
       </div>
     </div>
   </div>
