@@ -4,9 +4,13 @@ class Link < ActiveRecord::Base
   has_many :vote
 
   # Number of links per page
-  WillPaginate.per_page = 4
+  WillPaginate.per_page = 20
 
-  def self.fetch_links(page)
-    Link.order('point').paginate(:page => page)
+  def self.newlinks(page)
+    Link.order('created_at DESC').paginate(:page => page)
+  end
+
+  def self.hotlinks(page)
+    Link.order('point DESC').paginate(:page => page)
   end
 end

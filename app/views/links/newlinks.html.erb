@@ -1,0 +1,41 @@
+<main class="master-body">
+  <div class="ui page grid">
+    <div class="column feed-col">
+      <ol start="1"> <!-- Set this value to 31,61... due to paging -->
+        <% @links.each do |link| %>
+        <!-- Item -->
+        <li class="item">
+          <div class="main">
+            <% if user_signed_in? %>
+            <% if !link_voted(current_user, link) %>
+            <a href="<%=link_vote_path(link)%>"><i class="counterclockwise rotated play icon"></i></a>
+            <% end %>
+            <% else %>
+            <a href="<%=link_vote_path(link)%>"><i class="counterclockwise rotated play icon"></i></a>
+            <% end %>
+            <div class="title">
+              <a href="<%= link.url %>" target="_blank">
+                <%= link.title %>
+                <span class="source">(<%= URI.parse(link.url).host %>)</span>
+              </a>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="point"><%= link.vote.count %> hay</span>
+            <span class="divider">|</span>
+            <span class="wrote">đăng bởi</span>
+            <a href="<%= Rails.configuration.kipalink.kipalog %>/users/<%= link.user.name %>/mypage" class="author"><%= link.user.name %></a>
+            <a href="" class="time"><%= time_ago_in_words(link.created_at) %> ago</a>
+            <span class="divider">|</span>
+            <a href="<%= link_path(link) %>" class="comments"><%= link.link_comment.count %> bình luận</a>
+          </div>
+        </li>
+        <% end %>
+      </ol>
+      <!-- Next page -->
+      <div class="next">
+        <a href="/?page=<%= @nextPageNo %>" class="more">Xem tiếp</a>
+      </div>
+    </div>
+  </div>
+</main>

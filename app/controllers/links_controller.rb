@@ -2,8 +2,21 @@ class LinksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :vote]
 
   def index
-    @nextPageNo = params[:page].to_i + 1
-    @links = Link.fetch_links(params[:page])
+    if params[:page]
+      @nextPageNo = params[:page].to_i + 1
+    else
+      @nextPageNo = 2
+    end
+    @links = Link.hotlinks(params[:page])
+  end
+
+  def newlinks
+    if params[:page]
+      @nextPageNo = params[:page].to_i + 1
+    else
+      @nextPageNo = 2
+    end
+    @links = Link.newlinks(params[:page])
   end
 
   def new
