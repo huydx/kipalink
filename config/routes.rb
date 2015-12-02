@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
 
   root 'links#index'
+  get 'newlinks', to: 'links#newlinks'
 
   resources :links do
     resources :comments
